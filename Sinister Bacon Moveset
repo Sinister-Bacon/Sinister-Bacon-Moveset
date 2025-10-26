@@ -110,8 +110,8 @@ handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAni
 local StarterGui = game:GetService("StarterGui")
 
 local notificationOptions = {
-    Title = "Sinister Bacon Moveset",
-    Text = "Script Executed",
+    Title = "Script Executed, Please Read",
+    Text = "Theres No Skill Names, Only Animations",
     Duration = 5 -- Duration in seconds
 }
 
