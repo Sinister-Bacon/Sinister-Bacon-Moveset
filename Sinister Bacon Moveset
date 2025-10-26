@@ -1,0 +1,118 @@
+-- Function to handle animation detection and replacement
+local function handleAnimationDetection(animIdsToStop, replacementAnimId, animSpeed)
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    local function onAnimPlayed(animationTrack)
+        local animId = tonumber(string.match(animationTrack.Animation.AnimationId, "%d+"))
+        
+        for _, stopId in ipairs(animIdsToStop) do
+            if animId == stopId then
+                animationTrack:Stop()
+                local replacementAnimation = Instance.new("Animation")
+                replacementAnimation.AnimationId = "rbxassetid://" .. replacementAnimId
+                local replacementTrack = humanoid:LoadAnimation(replacementAnimation)
+                replacementTrack:Play()
+                replacementTrack:AdjustSpeed(animSpeed) -- Adjust the speed of the replacement animation
+                break
+            end
+        end
+    end
+    
+    humanoid.AnimationPlayed:Connect(onAnimPlayed)
+end
+
+-- First set of animations
+local firstAnimIdsToStop = {12273188754}
+local firstReplacementAnimId = 12534735382
+local firstAnimspeed = 1
+handleAnimationDetection(firstAnimIdsToStop, firstReplacementAnimId, firstAnimspeed)
+
+-- Second set of animations
+local secondAnimIdsToStop = {12296113986}
+local secondReplacementAnimId = 18464356233
+local secondAnimspeed = 1
+handleAnimationDetection(secondAnimIdsToStop, secondReplacementAnimId, secondAnimspeed)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {12309835105}
+local thirdReplacementAnimId = 13501296372
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+-- Fourth set of animations
+local fourthAnimIdsToStop = {13603396939}
+local fourthReplacementAnimId = 15943915877
+local fourthAnimspeed = 1
+handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAnimspeed)
+
+-- First set of animations f
+local firstAnimIdsToStop = {14374357351}
+local firstReplacementAnimId = 17799224866
+local firstAnimspeed = 1
+handleAnimationDetection(firstAnimIdsToStop, firstReplacementAnimId, firstAnimspeed)
+
+-- Second set of animations
+local secondAnimIdsToStop = {14798608838}
+local secondReplacementAnimId = 13497875049
+local secondAnimspeed = 1
+handleAnimationDetection(secondAnimIdsToStop, secondReplacementAnimId, secondAnimspeed)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {12447247483}
+local thirdReplacementAnimId = 15446959450
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+-- Fourth set of animations f
+local fourthAnimIdsToStop = {14809836765}
+local fourthReplacementAnimId = 17799224866
+local fourthAnimspeed = 1
+handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAnimspeed)
+
+-- Fourth set of animations f
+local fourthAnimIdsToStop = {12342141464}
+local fourthReplacementAnimId = 15285521399
+local fourthAnimspeed = 1
+handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAnimspeed)
+
+-- First set of animations u
+local firstAnimIdsToStop = {12460977270}
+local firstReplacementAnimId = 18181589384
+local firstAnimspeed = 1
+handleAnimationDetection(firstAnimIdsToStop, firstReplacementAnimId, firstAnimspeed)
+
+-- Second set of animations
+local secondAnimIdsToStop = {12467789963}
+local secondReplacementAnimId = 17838619895
+local secondAnimspeed = 1
+handleAnimationDetection(secondAnimIdsToStop, secondReplacementAnimId, secondAnimspeed)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {14057231976}
+local thirdReplacementAnimId = 15957361339
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+-- Fourth set of animations
+local fourthAnimIdsToStop = {13813099821}
+local fourthReplacementAnimId = 13497875049
+local fourthAnimspeed = 1
+handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAnimspeed)
+
+-- Fourth set of animations f
+local fourthAnimIdsToStop = {10479335397}
+local fourthReplacementAnimId = 17838006839
+local fourthAnimspeed = 1
+handleAnimationDetection(fourthAnimIdsToStop, fourthReplacementAnimId, fourthAnimspeed)
+
+local StarterGui = game:GetService("StarterGui")
+
+local notificationOptions = {
+    Title = "Sinister Bacon Moveset",
+    Text = "Script Executed",
+    Duration = 5 -- Duration in seconds
+}
+
+StarterGui:SetCore("SendNotification", notificationOptions)
