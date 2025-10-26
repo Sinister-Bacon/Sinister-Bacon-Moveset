@@ -23,8 +23,7 @@ local function handleAnimationDetection(animIdsToStop, replacementAnimId, animSp
     humanoid.AnimationPlayed:Connect(onAnimPlayed)
 end
 
--- SkillModule.Skills = {
-        Name = "Malicious Fury",First set of animations
+-- First set of animations
 local firstAnimIdsToStop = {12273188754}
 local firstReplacementAnimId = 12534735382
 local firstAnimspeed = 1
